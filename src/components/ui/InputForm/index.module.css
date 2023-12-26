@@ -1,0 +1,20 @@
+.container > legend {
+  display: flex;
+  flex-direction: column;
+  gap: var(--base) 0;
+}
+
+.container > legend > label {
+  font-weight: bold;
+}
+
+.container > legend > input {
+  padding-bottom: 4px;
+  max-width: 320px;
+  border: none;
+  border-bottom: 1px solid var(--gray);
+}
+
+.container > legend > input::placeholder {
+  color: var(--gray);
+}
