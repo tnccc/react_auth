@@ -1,20 +1,46 @@
+.container {
+  --icon-size: 18px;
+}
+
 .container > legend {
   display: flex;
   flex-direction: column;
   gap: var(--base) 0;
 }
 
-.container > legend > label {
+.container > legend > div > label {
   font-weight: bold;
 }
 
-.container > legend > input {
+.container > legend > div > input {
   padding-bottom: 4px;
   max-width: 320px;
   border: none;
   border-bottom: 1px solid var(--gray);
+  transition: border-bottom .25s linear;
 }
 
-.container > legend > input::placeholder {
+.container > legend > div > input::placeholder {
   color: var(--gray);
+}
+
+.container > legend > div > input:focus {
+  outline: none;
+  border-bottom: 1px solid var(--black);
+}
+
+.password {
+  position: relative;
+}
+
+.icon {
+  position: absolute;
+  bottom: 0;
+  margin: 2px 0 0 calc(var(--icon-size) * -1);
+  display: inline-block;
+}
+
+.icon > svg {
+  width: var(--icon-size);
+  height: var(--icon-size);
 }
