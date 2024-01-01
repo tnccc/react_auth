@@ -8,13 +8,14 @@
   gap: var(--base) 0;
 }
 
-.container > legend > div > label {
+.container > legend > label {
   font-weight: bold;
 }
 
 .container > legend > div > input {
   padding-bottom: 4px;
-  max-width: 320px;
+  max-width: var(--form-width);
+  width: 100%;
   border: none;
   border-bottom: 1px solid var(--gray);
   transition: border-bottom .25s linear;

@@ -1,0 +1,13 @@
+.container > legend {
+  display: flex;
+  flex-direction: column;
+  gap: var(--base) 0;
+}
+
+.container > legend > label {
+  font-weight: bold;
+}
+
+.container > legend > select {
+  max-width: var(--form-width);
+}

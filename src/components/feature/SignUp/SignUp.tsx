@@ -1,5 +1,7 @@
 import styles from '@/components/feature/SignUp/index.module.css'
 import { InputForm } from '@/components/ui/InputForm';
+import { SelectBox } from '@/components/ui/SelectBox';
+import { generateYears } from '@/utils/years'
 import { useState } from "react";
 
 export const SignUp = () => {
@@ -8,9 +10,8 @@ export const SignUp = () => {
     name: '',
     email: '',
     password: '',
+    birthDay: '1980',
   })
-
-  console.log(userData);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setUserData({
@@ -18,6 +19,13 @@ export const SignUp = () => {
       [e.target.name]: e.target.value
     });
   }
+
+  const handleBirthdayChange = (newBirthday: string) => {
+    setUserData({
+      ...userData,
+      birthDay: newBirthday,
+    });
+  };
 
   return (
       <div className={styles.sign_up}>
@@ -46,7 +54,20 @@ export const SignUp = () => {
             placeHolder="Your password"
             onChange={handleChange}
           />
+          <SelectBox
+            label='Birthday'
+            name='birthday'
+            selectedValue={userData.birthDay}
+            setSelectedValue={handleBirthdayChange}
+            options={generateYears(1980)}
+          />
         </form>
+        <div>
+          { userData.name }
+          { userData.email }
+          { userData.password }
+          { userData.birthDay }
+        </div>
       </div>
   )
 }
